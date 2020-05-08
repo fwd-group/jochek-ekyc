@@ -1,9 +1,13 @@
 # JoChek eKYC API - Singapore Photo ID
 *Updated 8 May 2020*
 
-### 1. Objective
+### 1. Overview
 
-JoChek eKYC API validates Singapore National Photo ID (NRIC) in 4 different areas:
+Applications used by customers or insurance agents require **KYC (know your customer)** process as part of the sales flow. During KYC, customers need to provide a Photo ID to match against their provided customer details. The API service automates the process of document check and field validation. 
+
+![Image of Flow](./images/kyc-process.png)
+
+JoChek eKYC API validates the Photo ID in 4 different areas:
 
 * **Classification**
    * Document type
@@ -16,10 +20,6 @@ JoChek eKYC API validates Singapore National Photo ID (NRIC) in 4 different area
    * Accept or Reject indicator (boolean flag)
 * **Keyword Comparison Check**
    * Found or Not Found indicator (boolean flag)
-
-A front end application used by customers or insurance agents requires **KYC (know your customer)** process as part of the sales flow. During KYC, customers need to provide a Photo ID to match against their provided customer details. The API service automates the process of document check and field validation. 
-
-![Image of Flow](./images/kyc-process.png)
 
 JoChek eKYC API will assess the uploaded image and respond with an accept/reject flag in real time. If the image is **acceptable**, the sales flow proceeds. If **rejected**, the customer is requested to re-upload a new image. JoChek eKYC can be used in tandem with AML (anti money laundering) solutions if required.
 
@@ -379,6 +379,16 @@ When exact or highly similar matches of the provided keywords are found, the fol
 
 Keyword search results are returned within the **vision.extract.keywords** object. In the case of **idNum** and **name** indicators, both returned HIGH similarity match scores of 100 (out of scale of 1-100). Similarity match scores require a threshold of **above 90** to be considered highly similar. Therefore the corresponding **passThreshold** variables show as *true* to indicate that exact matches were found for these keywords.
 
-### 15. Conclusion
+### 15. Business Enquiries
 
-JoChek eKYC API system can be used to validate photo ID image, and whether to accept or reject the image via the finalDecision parameter and keyword similarity search.
+JoChek eKYC API system can be used to perform real-time validation of photo ID image and audit customer inputs. JoChek eKYC is also available for IDs of the following document types:
+
+- Singapore NRIC
+- Malaysia MyKad
+- Thailand ID
+- Hong Kong ID
+- Philippines UMID
+- Vietnam ID
+- International Passport (TD3 compliant)
+
+You can reach out to us at innovation@fwd.com for business enquiries and test keys.
